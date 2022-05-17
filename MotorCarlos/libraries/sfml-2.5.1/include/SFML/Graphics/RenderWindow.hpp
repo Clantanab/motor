@@ -25,9 +25,11 @@
 #ifndef SFML_RENDERWINDOW_HPP
 #define SFML_RENDERWINDOW_HPP
 
+
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
+#pragma once
 #include <SFML/Graphics/Export.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <SFML/Graphics/Image.hpp>
