@@ -4,6 +4,7 @@
 #include <memory>
 #include <vector>
 #include <include\SDL.h>
+#undef main
 //#include <GLFW\glfw3.h>
 
 
