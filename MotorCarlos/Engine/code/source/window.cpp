@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include <window.h>
+#include <window.hpp>
 #include <cassert>
 #include <OpenGL.hpp>
 

@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <map>
-#include <entity.h>
+#include <entity.hpp>
 namespace engine 
 {
 

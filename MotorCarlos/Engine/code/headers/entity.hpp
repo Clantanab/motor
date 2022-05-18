@@ -2,13 +2,12 @@
 
 #include <iostream>
 #include <vector>
-
+#include <component.hpp>
 
 namespace engine 
 {
 	class Transform;
 	class Scene;
-	class Component;
 
 	class Entity {
 
@@ -28,6 +27,8 @@ namespace engine
 		std::string* GetID();
 		void AddComponent(Component* new_component);
 		Transform* GetTransform();
+
+
 		template<typename T>
 		T* GetComponent();
 	};

@@ -1,8 +1,8 @@
 #include <iostream>
-#include <window.h>
-#include <scene.h>
-#include <entity.h>
-
+#include <window.hpp>
+#include <scene.hpp>
+#include <entity.hpp>
+#include <transform.hpp>
 using namespace engine;
 #undef main
 
@@ -23,6 +23,9 @@ int main()
 	std::cout << *e.GetID() << std::endl;
 	std::cout << *e1.GetID() << std::endl;
 	std::cout << *e2.GetID() << std::endl;
+	std::cout << e.GetTransform()->GetPosition().x << std::endl;
+	e.GetTransform()->Translate(Vector3(100, 0, 0));
+	std::cout << e.GetTransform()->GetPosition().x << std::endl;
 	do {
 
 	} while (true);

@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include <entity.h>
-#include <scene.h>
-#include <transform.h>
-#include <component.h>
+#include <entity.hpp>
+#include <scene.hpp>
+#include <transform.hpp>
+
 
 namespace engine 
 {
@@ -52,8 +52,8 @@ namespace engine
 		components.push_back(new_component);
 	}
 
-		template< typename T >
-	T* get_component()
+	template< typename T >
+	T*  Entity:: GetComponent()
 	{
 		for (auto& component : components)
 		{

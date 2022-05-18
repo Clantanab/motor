@@ -1,7 +1,7 @@
 
-
-#include <transform.h>
-
+#pragma once 
+#include <transform.hpp>
+#include <entity.hpp>
 
 namespace engine
 {
@@ -25,17 +25,24 @@ namespace engine
 	}
 
 
-	Transform::Transform(const float positionX, const float positionY, const float positionZ,  Transform* const parent = nullptr)
+	Transform::Transform( float const positionX,  float const positionY,  float const  positionZ, Transform* const parent)
 	{
 
 		this->position.x = positionX;
 		this->position.y = positionY;
 		this->position.z = positionZ;
+		this->rotation.x = 0;
+		this->rotation.y = 0;
+		this->rotation.z = 0;
+		//Scale
+		this->scale.x = 1;
+		this->scale.y = 1;
+		this->scale.z = 1;
 
 		this->parent = parent;
 	}
 
-	Transform::Transform(  const Vector3 position, const Vector3 rotation, const Vector3 scale,  Transform* const parent = nullptr)
+	Transform::Transform(   Vector3 const position,  Vector3 const rotation,  Vector3 const scale,  Transform* const parent)
 	{
 
 		this->position = position;
@@ -80,7 +87,37 @@ namespace engine
 		return this->rotation;
 	}
 
-	Vector3 Transform::GetScale() const {
+	Vector3 Transform::GetScale() const 
+	{
 		return this->scale;
 	}
+
+	void Transform::Translate(Vector3 position)
+	{
+		this->position.x += position.x;
+		this->position.y += position.y;
+		this->position.z += position.z;
+	}
+	void Transform::Rotate(Vector3 rotation)
+	{
+		this->rotation.x += rotation.x;
+		this->rotation.y += rotation.y;
+		this->rotation.z += rotation.z;
+	}
+	void Transform::SetPosition(Vector3 newPosition)
+	{
+		this->position = newPosition;
+	}
+
+	void Transform::SetRotation(Vector3 newRotation)
+	{
+		this->rotation = newRotation;
+	}
+
+	void Transform::SetScale(Vector3 scale)
+	{
+		this->scale = scale;
+	}
+
+	
 }
