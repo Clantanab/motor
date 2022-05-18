@@ -5,6 +5,8 @@
 
 #include <entity.h>
 #include <scene.h>
+#include <transform.h>
+#include <component.h>
 
 namespace engine 
 {
@@ -12,16 +14,27 @@ namespace engine
 	{
 		this->id = "0";
 
+		Transform* t = new Transform();
+		this->transform = t;
+		AddComponent(t);
+
 		scene->AddEntity(this);
 
 	}
 	Entity::Entity(Scene* scene, std::string& id)
 	{
 		this->id = id;
+		Transform* t = new Transform();
+		this->transform = t;
+		AddComponent(t);
 		scene->AddEntity(this);
 	}
-	Entity::Entity(Scene* scene, std::string& id, Transform* transform) {
-
+	Entity::Entity(Scene* scene, std::string& id, Transform* transform)
+	{
+		this->id = id;
+		this->transform = new Transform();
+		this->transform->SetParent(transform);
+		AddComponent(this->transform);
 	}
 
 	std::string* Entity::GetID() {
@@ -33,15 +46,16 @@ namespace engine
 	{
 		return this->transform;
 	}
-	/*void Entity::add_component(Component* new_component)
+
+	void Entity::AddComponent(Component* new_component)
 	{
 		components.push_back(new_component);
-	}*/
+	}
 
 		template< typename T >
 	T* get_component()
 	{
-		/*for (auto& component : components)
+		for (auto& component : components)
 		{
 			auto realComponent = dynamic_cast<T*>(component);
 
@@ -49,7 +63,7 @@ namespace engine
 			{
 				return realComponent;
 			}
-		}*/
+		}
 
 		return nullptr;
 	}

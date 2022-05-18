@@ -4,18 +4,18 @@
 #include <glm/gtx/matrix_decompose.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <entity.h>
-
+#include <component.h>
 namespace engine 
 {
 	typedef glm::mat4 Matrix;
 	typedef glm::vec3 Vector3;
 
 
-	class Transform
+	class Transform: public Component
 	{
 
 	private:
-		
+
 		Vector3 position;
 		Vector3 rotation;
 		Vector3 scale;
@@ -23,22 +23,20 @@ namespace engine
 		Transform* parent;
 	public:
 		
-		Transform(Entity* entity);
-		Transform(Entity* entity, float positionX, float positionY, float positionZ, Transform* parent = nullptr);
-		Transform(Entity* entity, Matrix m, Transform* parent = nullptr);
+		Transform();
+		Transform(  const float positionX, const float positionY, const float positionZ,  Transform* const parent = nullptr);
+		Transform(  const Vector3 position, const Vector3 rotation, const Vector3 scale,  Transform* const parent = nullptr);
+	
 
 		void SetParent(Transform* newParent);
 
+		//Transform* GetParent() const;
 
-		Matrix GetMatrix();
+		Matrix GetMatrix() const;
 
-		Vector3 GetPosition();
-		Vector3 GetRotation();
-		Vector3 GetScale();
-
-		void SetTransform(Matrix m);
-	private:
-
+		Vector3 GetPosition() const;
+		Vector3 GetRotation() const;
+		Vector3 GetScale() const;
 	};
 
 }

@@ -8,13 +8,14 @@ namespace engine
 {
 	class Transform;
 	class Scene;
+	class Component;
 
 	class Entity {
 
 	private:
 
 		std::string id;
-		//std::vector<Component*> components;
+		std::vector<Component*> components;
 		Transform* transform = nullptr;
 	public:
 
@@ -25,7 +26,7 @@ namespace engine
 		Entity(Scene * scene, std::string& id, Transform* transform);
 
 		std::string* GetID();
-		//void AddComponent(Component* new_component);
+		void AddComponent(Component* new_component);
 		Transform* GetTransform();
 		template<typename T>
 		T* GetComponent();
