@@ -10,11 +10,11 @@ namespace engine
 
 
 	class Window {
-
-
-	public:
+	private:
 		size_t width;
 		size_t heigth;
+
+	public:
 
 		SDL_Window* window;
 
