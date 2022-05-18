@@ -15,6 +15,7 @@ namespace engine
 		Entity* entity = nullptr;
 	public:
 		virtual ~Component() = default;
+		void SetEntity(Entity* const e) { this->entity = e; }
 	};
 
 

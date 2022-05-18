@@ -2,6 +2,7 @@
 #pragma once 
 #include <transform.hpp>
 #include <entity.hpp>
+#include <iostream>
 
 namespace engine
 {
@@ -9,6 +10,7 @@ namespace engine
 
 	Transform::Transform()
 	{
+		
 		this->parent = nullptr;
 		//Position
 		this->position.x = 0;
@@ -94,6 +96,7 @@ namespace engine
 
 	void Transform::Translate(Vector3 position)
 	{
+		std::cout << *entity->GetID() << std::endl;
 		this->position.x += position.x;
 		this->position.y += position.y;
 		this->position.z += position.z;

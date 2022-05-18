@@ -49,6 +49,7 @@ namespace engine
 
 	void Entity::AddComponent(Component* new_component)
 	{
+		new_component->SetEntity(this);
 		components.push_back(new_component);
 	}
 

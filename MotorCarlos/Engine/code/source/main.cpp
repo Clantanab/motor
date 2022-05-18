@@ -26,6 +26,7 @@ int main()
 	std::cout << e.GetTransform()->GetPosition().x << std::endl;
 	e.GetTransform()->Translate(Vector3(100, 0, 0));
 	std::cout << e.GetTransform()->GetPosition().x << std::endl;
+
 	do {
 
 	} while (true);
