@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\code\source\main.cpp" />
     <ClCompile Include="..\code\source\window.cpp" />
+    <ClCompile Include="..\code\source\winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\code\headers\window.h" />
@@ -128,8 +129,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2d.lib;Setupapi.lib;Version.lib;imm32.lib;winmm.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\libraries\sdl2-vs\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2d.lib;Setupapi.lib;Version.lib;imm32.lib;winmm.lib;opengl32.lib;opengl-toolkit-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\libraries\opengl-toolkit\lib\x64;$(SolutionDir)..\libraries\sdl2-vs\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

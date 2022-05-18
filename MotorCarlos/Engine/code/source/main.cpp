@@ -2,12 +2,15 @@
 #include <window.h>
 
 using namespace engine;
+#undef main
+
+
 int main() 
 {
 
 
 
-	Window window = Window("prueba", 800, 800, false);
+	Window window =  Window("prueba", 800, 800, false);
 
 	do {
 

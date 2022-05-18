@@ -7,7 +7,7 @@
 
 namespace engine {
 
-	Window::Window(const std::string& name, size_t  width, size_t height, bool allScreen = false)
+	Window::Window(const std::string& name, size_t  width, size_t height, bool allScreen)
 	{
 		
 		this->width = width;
@@ -48,11 +48,14 @@ namespace engine {
 
 	unsigned Window::Get_Width() const 
 	{
-		return this->width;
+		/*int width = 0, height = 0;
+		if (context) SDL_GetWindowSize(window, &width, &height);*/
+		
+		return (unsigned)this->width;
 	}
 	unsigned Window::Get_Height() const
 	{
-		return this->heigth;
+		return (unsigned)this->heigth;
 	}
 
 	void Window::Clear()const
