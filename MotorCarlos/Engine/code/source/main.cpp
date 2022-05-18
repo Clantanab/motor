@@ -12,12 +12,12 @@ int main()
 
 
 
-	Window window =  Window("prueba", 800, 800, false);
-	Scene scene = Scene("pruebaEscena", window);
+	Window window ("prueba", 800, 800, false);
+	Scene scene   ("pruebaEscena", window);
 ;
-	Entity e = Entity(&scene);
-	Entity e1 = Entity(&scene);
-	Entity e2 = Entity(&scene);
+	Entity e (&scene);
+	Entity e1(&scene);
+	Entity e2(&scene);
 
 
 	std::cout << *e.GetID() << std::endl;
