@@ -67,9 +67,10 @@ namespace engine {
 		if (context) SDL_GL_SwapWindow(this->window);
 	}
 
-	void Window::HandleEvents() 
+	void Window::End()
 	{
-
+		SDL_DestroyWindow(window);
+		SDL_Quit();
 	}
 
 }

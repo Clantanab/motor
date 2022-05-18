@@ -28,7 +28,7 @@ namespace engine
 
 		void Clear() const;
 		void SwapBuffers() const;
-		void HandleEvents();
+
 
 		void End();
 
