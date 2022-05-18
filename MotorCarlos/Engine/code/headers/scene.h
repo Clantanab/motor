@@ -33,6 +33,8 @@ namespace engine
 		//Entity* get_entity(const std::string&);
 		std::string get_name() {	return id;}
 
+		//void AddEntity(Entity* entity);
+		//Entity* GetEntity(const std::string id);
 	private:
 
 	};
