@@ -4,7 +4,7 @@
 
 
 #include <scene.h>
-
+#include <sstream>
 
 namespace engine 
 {
@@ -38,15 +38,30 @@ namespace engine
 	}
 
 
-	/*void Scene::add_entity(Entity* new_entity)
+	void Scene::AddEntity(Entity* new_entity)
 	{
-		entities.insert(std::pair<Id, Entity*>(new_entity->id, new_entity));
-	}*/
+		if (entitys[*new_entity->GetID()] != nullptr) 
+		{
+			unsigned iterator = 0;
+			std::string aux;
+			do {
+				++iterator;
+				aux = *new_entity->GetID() + std::to_string(iterator);
+			} while (entitys[aux] != nullptr);
+
+			*new_entity->GetID() = aux;
 
 
-	/*Entity* Scene::get_entity(const std::string& id)
+		}
+
+
+		entitys.insert(std::pair<std::string, Entity*>(*new_entity->GetID(), new_entity));
+	}
+
+
+	Entity* Scene::GetEntity(const std::string* id)
 	{
 	
-		return entitiys[id];
-	}*/
+		return this->entitys[*id];
+	}
 }
