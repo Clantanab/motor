@@ -24,7 +24,7 @@ namespace engine
 	public:
 		 Scene(const std::string& id, Window& window);
 
-		~ Scene();
+
 
 		void Init();
 		void Update(float time);

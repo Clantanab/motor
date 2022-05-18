@@ -21,12 +21,21 @@
     <ClCompile Include="..\code\source\window.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\code\source\winmain.cpp">
+    <ClCompile Include="..\code\source\scene.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\entity.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\code\headers\window.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\scene.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\entity.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

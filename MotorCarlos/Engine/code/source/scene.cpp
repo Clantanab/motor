@@ -40,14 +40,14 @@ namespace engine
 
 	void Scene::AddEntity(Entity* new_entity)
 	{
-		if (entitys[*new_entity->GetID()] != nullptr) 
+		if (entitys.find( *new_entity->GetID()) != entitys.end())
 		{
 			unsigned iterator = 0;
 			std::string aux;
 			do {
 				++iterator;
 				aux = *new_entity->GetID() + std::to_string(iterator);
-			} while (entitys[aux] != nullptr);
+			} while (entitys.find(aux) != entitys.end());
 
 			*new_entity->GetID() = aux;
 
@@ -56,6 +56,8 @@ namespace engine
 
 
 		entitys.insert(std::pair<std::string, Entity*>(*new_entity->GetID(), new_entity));
+
+		std::cout << entitys.size() << std::endl;
 	}
 
 

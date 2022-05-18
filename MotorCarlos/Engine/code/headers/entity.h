@@ -2,11 +2,12 @@
 
 #include <iostream>
 #include <vector>
-#include <scene.h>
+
 
 namespace engine 
 {
 	class Transform;
+	class Scene;
 
 	class Entity {
 
@@ -19,9 +20,9 @@ namespace engine
 
 
 
-		Entity(Scene* scene);
-		Entity(Scene* scene,std::string& id);
-		Entity(Scene* scene, std::string& id, Transform* transform);
+		Entity(Scene * scene);
+		Entity(Scene * scene,std::string& id);
+		Entity(Scene * scene, std::string& id, Transform* transform);
 
 		std::string* GetID();
 		//void AddComponent(Component* new_component);
