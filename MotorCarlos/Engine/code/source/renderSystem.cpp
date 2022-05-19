@@ -4,6 +4,7 @@
 #include <transform.hpp>
 #include <meshComponent.hpp>
 #include <cameraComponent.hpp>
+#include <lightComponent.hpp>
 //#include <glm/gtc/matrix_transform.hpp>
 
 namespace engine
@@ -26,7 +27,8 @@ namespace engine
 	void RenderSystem::Run() 
 	{
 
-
+		std::cout << renderComponents.size() << std::endl;
+		std::cout << "REnder" << std::endl;
 		GLsizei height = GLsizei(window->Get_Height());
 		GLsizei width = GLsizei(window->Get_Width());
 
@@ -58,5 +60,9 @@ namespace engine
 	void RenderSystem::CreateCameraComponent(Entity* e)
 	{
 		renderComponents.push_back(new CameraComponent(e, *this));
+	}
+	void RenderSystem::CreateLightComponent(Entity* e)
+	{
+		renderComponents.push_back(new LightComponent(e, *this));
 	}
 }

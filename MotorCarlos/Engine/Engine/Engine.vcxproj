@@ -23,6 +23,7 @@
     <ClCompile Include="..\code\source\cameraComponent.cpp" />
     <ClCompile Include="..\code\source\entity.cpp" />
     <ClCompile Include="..\code\source\kernel.cpp" />
+    <ClCompile Include="..\code\source\lightComponent.cpp" />
     <ClCompile Include="..\code\source\main.cpp" />
     <ClCompile Include="..\code\source\meshComponent.cpp" />
     <ClCompile Include="..\code\source\renderSystem.cpp" />
@@ -35,6 +36,7 @@
     <ClInclude Include="..\code\headers\component.hpp" />
     <ClInclude Include="..\code\headers\entity.hpp" />
     <ClInclude Include="..\code\headers\kernel.hpp" />
+    <ClInclude Include="..\code\headers\lightComponent.hpp" />
     <ClInclude Include="..\code\headers\meshComponent.hpp" />
     <ClInclude Include="..\code\headers\renderComponent.hpp" />
     <ClInclude Include="..\code\headers\RendererSystem.hpp" />

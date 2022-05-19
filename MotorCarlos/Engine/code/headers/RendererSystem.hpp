@@ -29,6 +29,7 @@ namespace engine
 		 void Run() override;
 		 void CreateMeshComponent(Entity* e, std::string path);
 		 void CreateCameraComponent(Entity* e);
+		 void CreateLightComponent(Entity* e);
 		 //void End() override;
 
 		 //~RenderSystem();

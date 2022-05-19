@@ -26,7 +26,9 @@ namespace engine
 
 	void Kernel::Run()
 	{
-		
+		std::cout << tasks.size() << std::endl;
+
+
 		do
 		{
 			for (auto task : tasks)

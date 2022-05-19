@@ -16,7 +16,7 @@ namespace engine
 		std::string id;
 		std::vector<Component*> components;
 		Transform* transform = nullptr;
-		bool active;
+		bool active = true;
 	public:
 
 
