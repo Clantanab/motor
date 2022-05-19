@@ -10,6 +10,9 @@ namespace engine
 {
 	class Kernel
 	{
+	private:
+		bool active = true;
+
 	public:
 		static Kernel& Instance() 
 		{
@@ -17,7 +20,6 @@ namespace engine
 			return kernel;
 		}
 
-		bool active = true;
 
 		std::set<Task*, Task::Comparar> tasks;
 
@@ -25,8 +27,8 @@ namespace engine
 		void Init();
 		void AddTask(Task* newTask);
 		void Run();
-		//void Deactivate();
-		//void End();
+		void SetActive(bool active);
+		void End();
 
 
 

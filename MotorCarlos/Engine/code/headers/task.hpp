@@ -17,11 +17,11 @@ namespace engine
 			bool operator () (const Task* first, const Task* second) const{ return  first->priority < second->priority; }
 		};
 
-		/*virtual ~Task() = default;
+		virtual ~Task() = default;
 
 		virtual void Run(float time) = 0;
 		virtual void Init() = 0;
-		virtual void End() = 0;*/
+		virtual void End() = 0;
 
 		bool cmp(const Task* a, const Task* b) { return a->priority < b->priority; }
 	};
