@@ -14,6 +14,7 @@ namespace engine
 		bool active = true;
 
 	public:
+
 		static Kernel& Instance() 
 		{
 			static Kernel kernel;
@@ -26,6 +27,7 @@ namespace engine
 		Kernel();
 		void Init();
 		void AddTask(Task* newTask);
+		//Hacer una funcion que elimine una task 
 		void Run();
 		void SetActive(bool active);
 		void End();

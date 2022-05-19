@@ -17,7 +17,7 @@ namespace engine
 
 	public:
 
-		static SceneManager& instance() 
+		static SceneManager& Instance() 
 		{
 			static SceneManager sceneManager;
 			return sceneManager;

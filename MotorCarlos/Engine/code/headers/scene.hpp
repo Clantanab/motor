@@ -29,7 +29,7 @@ namespace engine
 
 		void Init();
 		void Update(float time);
-		void render();
+		void Render();
 
 		std::string GetName() {	return id;}
 

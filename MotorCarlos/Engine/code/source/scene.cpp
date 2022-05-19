@@ -32,7 +32,7 @@ namespace engine
 		//control_system->run(time);
 		//collision_system->run(time);
 	}
-	void Scene::render()
+	void Scene::Render()
 	{
 		rendererSystem->Run();
 	}
