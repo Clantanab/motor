@@ -9,10 +9,10 @@
 
 namespace engine
 {
-	class System 
+	class System : public Task
 	{
 	private:
-
+		
 
 	public:
 		System() = default;

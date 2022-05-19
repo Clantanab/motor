@@ -13,5 +13,6 @@ namespace engine
 	{
 	public:
 		virtual glt::Node& GetNode() = 0;
+
 	};
 }

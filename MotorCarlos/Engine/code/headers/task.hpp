@@ -19,7 +19,7 @@ namespace engine
 
 		virtual ~Task() = default;
 
-		virtual void Run(float time) = 0;
+		virtual void Run() = 0;
 		virtual void Init() = 0;
 		virtual void End() = 0;
 

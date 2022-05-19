@@ -15,12 +15,6 @@ namespace engine
 
 	public:
 
-		static Kernel& Instance() 
-		{
-			static Kernel kernel;
-			return kernel;
-		}
-
 
 		std::set<Task*, Task::Comparar> tasks;
 

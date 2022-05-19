@@ -15,14 +15,13 @@ namespace engine
 		{
 			task->Init();
 		}
+
+		Run();
 	}
 
 	void Kernel::AddTask(Task* newTask)
 	{
-
-		tasks.insert(newTask);
-
-		
+		tasks.insert(newTask);	
 	}
 
 	void Kernel::Run()
@@ -32,7 +31,7 @@ namespace engine
 		{
 			for (auto task : tasks)
 			{
-				task->Run(0);
+				task->Run();
 			}
 
 		} while (active);

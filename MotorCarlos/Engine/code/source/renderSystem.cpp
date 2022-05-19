@@ -6,22 +6,25 @@
 
 namespace engine
 {
-
-
-	RenderSystem::RenderSystem(Window* window)
+	RenderSystem::RenderSystem(Window* window, int priorty, Kernel* kernel)
 	{
-		window = window;
+		this->window = window;
+		this->priority = priority;
 		renderNode.reset(new glt::Render_Node);
+		kernel->AddTask(this);
 	}
 
 
 	void RenderSystem::AddComponent(RenderComponent* newComponent) 
 	{
+		std::cout << "HELLO" << std::endl;
 		renderComponents.push_back(newComponent);
 	}
 
 	void RenderSystem::Run() 
 	{
+
+
 		GLsizei height = GLsizei(window->Get_Height());
 		GLsizei width = GLsizei(window->Get_Width());
 

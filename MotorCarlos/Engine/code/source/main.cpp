@@ -3,8 +3,11 @@
 #include <scene.hpp>
 #include <entity.hpp>
 #include <transform.hpp>
-
+#include <sceneManager.hpp>
 #include<kernel.hpp>
+#include <render.hpp>
+#include <meshComponent.hpp>
+
 
 using namespace engine;
 #undef main
@@ -22,13 +25,21 @@ int main()
 	Entity e1(&scene);
 	Entity e2(&scene);
 
-	Kernel* k = new Kernel();
+
+
+
+	std::string path = "../../assets/sphere.obj";
+
+	new MeshComponent(&e,path, *scene.rendererSystem);
 
 	int i = 1;
 
+	SceneManager::Instance().ActivateScene(0);
 
 
 
+
+	
 	//std::cout << *e.GetID() << std::endl;
 	//std::cout << *e1.GetID() << std::endl;
 	//std::cout << *e2.GetID() << std::endl;

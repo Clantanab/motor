@@ -14,11 +14,36 @@ namespace engine
 	{
 		scenes.push_back(scene);
 	}
-
-	Scene* SceneManager::GetCurrentScene() 
+	bool SceneManager::ActivateScene(std::size_t i)
 	{
-		return scenes[currentScene];
+		if (i >= scenes.size()) {
+			std::cout << "El numero de escena no existe" << std::endl;
+			return false;
+		}
+		scenes[i]->Init();
+		activeScenes.push_back(i);
+		return true;
 	}
+	bool SceneManager::ActivateScene(std::string id)
+	{
+		bool encontrada = false;
+
+
+		for (int i = 0; i < scenes.size(); ++i)
+		{
+			if (scenes[i]->GetName() == id)
+			{
+				scenes[i]->Init();
+				activeScenes.push_back(i);
+				bool encontrada = true;
+			}
+		}
+		if (!encontrada) std::cout << "Escena no encontrada" << std::endl;
+
+		return encontrada;
+	}
+	
+	/*DEPRECATED
 	bool SceneManager::GoToScene(std::size_t i)
 	{
 		if (i >= scenes.size()) {
@@ -44,9 +69,10 @@ namespace engine
 		if (!encontrada) std::cout << "Escena no encontrada" << std::endl;
 
 		return encontrada;
-	}
+	}*/
 
-	void SceneManager::GoToNextScene()
+	//DEPRECATED
+	/*void SceneManager::GoToNextScene()
 	{
 		if (currentScene >= scenes.size() - 1) return;
 		 ++currentScene;
@@ -55,7 +81,7 @@ namespace engine
 	{
 		if (currentScene <= 0) return;
 		--currentScene;
-	}
+	}*/
 
 	void SceneManager::AddScene(Scene* scene)
 	{

@@ -12,8 +12,9 @@ namespace engine
 	private:
 
 		std::vector<Scene*> scenes;
+		std::vector<int> activeScenes;
 
-		std::size_t currentScene = 0;
+
 
 	public:
 
@@ -27,12 +28,11 @@ namespace engine
 		SceneManager();
 		SceneManager(Scene* scene);
 
-		Scene* GetCurrentScene();
-		bool GoToScene(std::size_t i);
-		bool GoToScene(std::string id);
+		
+		bool ActivateScene(std::size_t i);
+		bool ActivateScene(std::string id);
 
-		void GoToNextScene();
-		void GoToPreviousScene();
+
 
 		void AddScene(Scene* scene);
 		void EraseScene(std::size_t i);

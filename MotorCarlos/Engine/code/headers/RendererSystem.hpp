@@ -6,7 +6,7 @@
 #include <window.hpp>
 #include <renderComponent.hpp>
 #include <Render_Node.hpp>
-
+#include <kernel.hpp>
 
 namespace engine 
 {
@@ -22,7 +22,7 @@ namespace engine
 	public:
 		std::unique_ptr < glt::Render_Node > renderNode;
 
-		RenderSystem(Window* window);
+		RenderSystem(Window* window, int priorty, Kernel* kernel);
 
 		 //void  Init() override ;
 		 void AddComponent(RenderComponent* newComponent);

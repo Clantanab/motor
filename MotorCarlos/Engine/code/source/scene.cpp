@@ -15,14 +15,19 @@ namespace engine
 	{
 		this->id = id;
 
-		//Scene_manager::instance().add_scene(this);
+		SceneManager::Instance().AddScene(this);
 
-		rendererSystem.reset(new RenderSystem(&window));
+		this->kernel = new Kernel();
+
+		rendererSystem.reset(new RenderSystem(&window, 0, kernel));
 		//collision_system.reset(new Collision_System);
+
 	}
 
 	void Scene::Init()
 	{
+		kernel->Init();
+		
 		//Falta alguna clase de implementacion a futuro en caso de que sea necesario
 		//Podrian ser unas simples comprobaciones de que todo se ha iniciado correctamente
 	}
@@ -34,6 +39,7 @@ namespace engine
 	}
 	void Scene::Render()
 	{
+		std::cout << "Renderizo Escena" << std::endl;
 		rendererSystem->Run();
 	}
 

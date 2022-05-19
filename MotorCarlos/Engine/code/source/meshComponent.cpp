@@ -7,7 +7,7 @@ namespace engine
 	MeshComponent::MeshComponent(Entity* e, const std::string& path, RenderSystem& renderSystem)
 	{
 		this->entity = e;
-
+		entity->AddComponent(this);
 		modelo.reset(new glt::Model_Obj(path));
 
 		renderSystem.renderNode->add(*entity->GetID(), modelo);
