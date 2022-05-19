@@ -17,13 +17,14 @@ namespace engine
 
 		//Scene_manager::instance().add_scene(this);
 
-		//renderer_system.reset(new Renderer_System(window));
+		rendererSystem.reset(new RenderSystem(&window));
 		//collision_system.reset(new Collision_System);
 	}
 
 	void Scene::Init()
 	{
 		//Falta alguna clase de implementacion a futuro en caso de que sea necesario
+		//Podrian ser unas simples comprobaciones de que todo se ha iniciado correctamente
 	}
 
 	void Scene::Update(float time)
@@ -33,8 +34,7 @@ namespace engine
 	}
 	void Scene::render()
 	{
-		//Run the render system
-		//renderer_system->run(0);
+		rendererSystem->Run();
 	}
 
 

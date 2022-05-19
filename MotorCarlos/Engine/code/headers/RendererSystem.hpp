@@ -27,7 +27,7 @@ namespace engine
 		 //void  Init() override ;
 		 void AddComponent(RenderComponent* newComponent);
 		 void Run() override;
-		 void End() override;
+		 //void End() override;
 
 		 //~RenderSystem();
 

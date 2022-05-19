@@ -22,6 +22,6 @@ namespace engine
 		virtual void End() {};
 
 		virtual ~System() = default;
-		~Renderer_System();
+
 	};
 }

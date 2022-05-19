@@ -4,6 +4,7 @@
 #include <iostream>
 #include <map>
 #include <entity.hpp>
+#include<RendererSystem.hpp>
 namespace engine 
 {
 
@@ -17,7 +18,7 @@ namespace engine
 		std::string id;
 		std::map<std::string, Entity* > entitys;
 
-		//std::unique_ptr <Renderer_System>	 rendererSystem;		//< Pointer of the render system 
+		std::unique_ptr <RenderSystem>	 rendererSystem;		//< Pointer of the render system 
 		//std::unique_ptr <Control_System>	 controlSystem;		//< Pointer of the control system
 		//std::unique_ptr <Collision_System>	 collisionSystem;		//< Pointor of the colision system
 
