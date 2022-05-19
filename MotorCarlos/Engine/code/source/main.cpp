@@ -4,7 +4,7 @@
 #include <entity.hpp>
 #include <transform.hpp>
 
-
+#include<kernel.hpp>
 
 using namespace engine;
 #undef main
@@ -22,6 +22,14 @@ int main()
 	Entity e1(&scene);
 	Entity e2(&scene);
 
+	Kernel k();
+
+	int i = 1;
+
+	Task a(i);
+	Task a2(2);
+
+	
 
 	std::cout << *e.GetID() << std::endl;
 	std::cout << *e1.GetID() << std::endl;
