@@ -12,6 +12,10 @@ namespace engine
 
 		Task(int priority = 0){	this->priority = priority;}
 
+		struct Comparar
+		{
+			bool operator () (const Task* first, const Task* second) const{ return  first->priority < second->priority; }
+		};
 
 		/*virtual ~Task() = default;
 

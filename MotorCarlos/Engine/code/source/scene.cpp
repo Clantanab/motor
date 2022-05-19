@@ -56,8 +56,6 @@ namespace engine
 
 
 		entitys.insert(std::pair<std::string, Entity*>(*new_entity->GetID(), new_entity));
-
-		std::cout << entitys.size() << std::endl;
 	}
 
 

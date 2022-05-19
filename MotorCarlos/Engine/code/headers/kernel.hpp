@@ -19,14 +19,14 @@ namespace engine
 
 		bool active = true;
 
-		std::set<Task*,decltype (Task::cmp)* > tasks;
+		std::set<Task*, Task::Comparar> tasks;
 
 		Kernel();
 		void Init();
-		void AddTask();
+		void AddTask(Task* newTask);
 		void Run();
-		void Deactivate();
-		void End();
+		//void Deactivate();
+		//void End();
 
 
 
