@@ -34,10 +34,11 @@ int main()
 
 	int i = 1;
 
-	SceneManager::Instance().ActivateScene(0);
 	
 	SceneManager::Instance().GetScene(0)->rendererSystem->CreateMeshComponent(&e, path);
-
+	e.GetTransform()->Translate(Vector3(0, 0, -5));
+	SceneManager::Instance().GetScene(0)->rendererSystem->CreateCameraComponent(&e1);
+	SceneManager::Instance().ActivateScene(0);
 
 	
 	//std::cout << *e.GetID() << std::endl;

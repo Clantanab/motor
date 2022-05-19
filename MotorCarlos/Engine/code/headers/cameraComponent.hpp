@@ -13,6 +13,8 @@ namespace engine
 	protected:
 		std::shared_ptr< glt::Camera > camera = nullptr;
 
+
+	public:
 		glt::Node& GetNode() override
 		{
 			return *camera;

@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\code\headers\transform.cpp" />
+    <ClCompile Include="..\code\source\cameraComponent.cpp" />
     <ClCompile Include="..\code\source\entity.cpp" />
     <ClCompile Include="..\code\source\kernel.cpp" />
     <ClCompile Include="..\code\source\main.cpp" />

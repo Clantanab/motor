@@ -3,6 +3,7 @@
 #include <entity.hpp>
 #include <transform.hpp>
 #include <meshComponent.hpp>
+#include <cameraComponent.hpp>
 //#include <glm/gtc/matrix_transform.hpp>
 
 namespace engine
@@ -52,6 +53,10 @@ namespace engine
 
 	void RenderSystem::CreateMeshComponent(Entity* e, std::string path)
 	{
-		new MeshComponent(e, path, *this);
+		renderComponents.push_back (new MeshComponent(e, path, *this));
+	}
+	void RenderSystem::CreateCameraComponent(Entity* e)
+	{
+		renderComponents.push_back(new CameraComponent(e, *this));
 	}
 }
