@@ -42,6 +42,15 @@ namespace engine
 	}
 
 
+	void Entity::SetActive(bool active) 
+	{
+		this->active = active;
+	}
+	bool Entity::GetActive() const
+	{
+		return this->active;
+	}
+
 	Transform* Entity::GetTransform()
 	{
 		return this->transform;

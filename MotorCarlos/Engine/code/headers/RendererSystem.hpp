@@ -7,8 +7,10 @@
 #include <renderComponent.hpp>
 #include <Render_Node.hpp>
 
+
 namespace engine 
 {
+
 
 	class RenderSystem : public System
 	{
@@ -22,12 +24,12 @@ namespace engine
 
 		RenderSystem(Window* window);
 
-		 void  Init() override ;
+		 //void  Init() override ;
 		 void AddComponent(RenderComponent* newComponent);
 		 void Run() override;
 		 void End() override;
 
-		 ~RenderSystem();
+		 //~RenderSystem();
 
 
 	};

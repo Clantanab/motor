@@ -16,6 +16,7 @@ namespace engine
 		std::string id;
 		std::vector<Component*> components;
 		Transform* transform = nullptr;
+		bool active;
 	public:
 
 
@@ -27,6 +28,9 @@ namespace engine
 		std::string* GetID();
 		void AddComponent(Component* new_component);
 		Transform* GetTransform();
+
+		void SetActive(bool active);
+		bool GetActive() const;
 
 
 		template<typename T>

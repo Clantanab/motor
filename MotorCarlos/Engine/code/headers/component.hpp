@@ -16,7 +16,7 @@ namespace engine
 	public:
 		virtual ~Component() = default;
 		void SetEntity(Entity* const e) { this->entity = e; }
-
+		Entity* GetEntitiy() { return this->entity; };
 
 	};
 
