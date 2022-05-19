@@ -96,7 +96,7 @@ namespace engine
 
 	void Transform::Translate(Vector3 position)
 	{
-		std::cout << *entity->GetID() << std::endl;
+		
 		this->position.x += position.x;
 		this->position.y += position.y;
 		this->position.z += position.z;

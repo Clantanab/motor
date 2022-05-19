@@ -26,18 +26,14 @@ int main()
 
 	int i = 1;
 
-	Task a(i);
-	Task a2(2);
 
-	k->AddTask(&a);
-	k->AddTask(&a2);
-	k->Run();
+
 
 	//std::cout << *e.GetID() << std::endl;
 	//std::cout << *e1.GetID() << std::endl;
 	//std::cout << *e2.GetID() << std::endl;
 	//std::cout << e.GetTransform()->GetPosition().x << std::endl;
-	e.GetTransform()->Translate(Vector3(100, 0, 0));
+	//e.GetTransform()->Translate(Vector3(100, 0, 0));
 	//std::cout << e.GetTransform()->GetPosition().x << std::endl;
 
 	do {
