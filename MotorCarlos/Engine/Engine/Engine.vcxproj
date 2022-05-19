@@ -24,6 +24,7 @@
     <ClCompile Include="..\code\source\kernel.cpp" />
     <ClCompile Include="..\code\source\main.cpp" />
     <ClCompile Include="..\code\source\scene.cpp" />
+    <ClCompile Include="..\code\source\system.cpp" />
     <ClCompile Include="..\code\source\window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -33,6 +34,7 @@
     <ClInclude Include="..\code\headers\meshComponent.hpp" />
     <ClInclude Include="..\code\headers\renderComponent.hpp" />
     <ClInclude Include="..\code\headers\scene.hpp" />
+    <ClInclude Include="..\code\headers\system.hpp" />
     <ClInclude Include="..\code\headers\task.hpp" />
     <ClInclude Include="..\code\headers\transform.hpp" />
     <ClInclude Include="..\code\headers\window.hpp" />
