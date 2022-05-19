@@ -35,14 +35,36 @@ namespace engine
 			{
 				scenes[i]->Init();
 				activeScenes.push_back(i);
-				bool encontrada = true;
+				 encontrada = true;
 			}
 		}
 		if (!encontrada) std::cout << "Escena no encontrada" << std::endl;
 
 		return encontrada;
 	}
+
+	Scene* SceneManager::GetScene(std::size_t i)
+	{
+		if (i >= scenes.size()) {
+			std::cout << "El numero de escena no existe" << std::endl;
+			return nullptr;
+		}
 	
+		return scenes[i];
+	}
+	Scene* SceneManager::GetScene(std::string id)
+	{
+		for (int i = 0; i < scenes.size(); ++i)
+		{
+			if (scenes[i]->GetName() == id)
+			{
+				return scenes[i];
+
+			}
+		}
+		return nullptr;
+	}
+
 	/*DEPRECATED
 	bool SceneManager::GoToScene(std::size_t i)
 	{

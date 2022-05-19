@@ -27,6 +27,7 @@ namespace engine
 		 //void  Init() override ;
 		 void AddComponent(RenderComponent* newComponent);
 		 void Run() override;
+		 void CreateMeshComponent(Entity* e, std::string path);
 		 //void End() override;
 
 		 //~RenderSystem();

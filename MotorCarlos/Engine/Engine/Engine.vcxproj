@@ -30,6 +30,7 @@
     <ClCompile Include="..\code\source\window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\code\headers\cameraComponent.hpp" />
     <ClInclude Include="..\code\headers\component.hpp" />
     <ClInclude Include="..\code\headers\entity.hpp" />
     <ClInclude Include="..\code\headers\kernel.hpp" />

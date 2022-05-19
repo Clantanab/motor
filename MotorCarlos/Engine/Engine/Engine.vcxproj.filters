@@ -80,5 +80,8 @@
     <ClInclude Include="..\code\headers\sceneManager.hpp">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="..\code\headers\cameraComponent.hpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

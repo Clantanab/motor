@@ -2,6 +2,7 @@
 #include <RendererSystem.hpp>
 #include <entity.hpp>
 #include <transform.hpp>
+#include <meshComponent.hpp>
 //#include <glm/gtc/matrix_transform.hpp>
 
 namespace engine
@@ -47,5 +48,10 @@ namespace engine
 		renderNode->render();
 
 		window->SwapBuffers();
+	}
+
+	void RenderSystem::CreateMeshComponent(Entity* e, std::string path)
+	{
+		new MeshComponent(e, path, *this);
 	}
 }

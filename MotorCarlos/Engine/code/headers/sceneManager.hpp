@@ -29,6 +29,9 @@ namespace engine
 		SceneManager(Scene* scene);
 
 		
+		Scene* GetScene(std::size_t i);
+		Scene* GetScene(std::string id);
+
 		bool ActivateScene(std::size_t i);
 		bool ActivateScene(std::string id);
 

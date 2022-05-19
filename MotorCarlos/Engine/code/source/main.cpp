@@ -30,13 +30,13 @@ int main()
 
 	std::string path = "../../assets/sphere.obj";
 
-	new MeshComponent(&e,path, *scene.rendererSystem);
+	
 
 	int i = 1;
 
 	SceneManager::Instance().ActivateScene(0);
-
-
+	
+	SceneManager::Instance().GetScene(0)->rendererSystem->CreateMeshComponent(&e, path);
 
 
 	
