@@ -17,18 +17,14 @@ namespace engine
 		kernel->AddTask(this);
 	}
 
-
+	//ESTO POSIBLEMENTE YA NO SEA NECESARIO DESPUES DEL CONSEJO DE ANGEL
 	void RenderSystem::AddComponent(RenderComponent* newComponent) 
 	{
-		std::cout << "HELLO" << std::endl;
 		renderComponents.push_back(newComponent);
 	}
 
 	void RenderSystem::Run() 
 	{
-
-		std::cout << renderComponents.size() << std::endl;
-		std::cout << "REnder" << std::endl;
 		GLsizei height = GLsizei(window->Get_Height());
 		GLsizei width = GLsizei(window->Get_Width());
 
