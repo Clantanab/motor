@@ -18,10 +18,10 @@ namespace engine
 		System() = default;
 
 		virtual void Init() {};
-		virtual void AddComponent(Component* newComponent) {};
 		virtual void Run() {};
 		virtual void End() {};
 
 		virtual ~System() = default;
+		~Renderer_System();
 	};
 }
