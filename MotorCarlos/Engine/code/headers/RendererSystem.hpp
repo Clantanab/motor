@@ -18,9 +18,9 @@ namespace engine
 		Window* window;
 		std::vector<RenderComponent*> renderComponents;
 
-		std::unique_ptr < glt::Render_Node > renderNode;
 
 	public:
+		std::unique_ptr < glt::Render_Node > renderNode;
 
 		RenderSystem(Window* window);
 

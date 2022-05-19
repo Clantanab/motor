@@ -1,19 +1,19 @@
 #pragma once
 
 #include <renderComponent.hpp>
-
+#include<RendererSystem.hpp>
+#include <Model_Obj.hpp>
+#include <Model.hpp>
 
 namespace engine
 {
-	class MeshComponent
+	class MeshComponent : public RenderComponent
 	{
+		std::shared_ptr< glt::Model > modelo = nullptr;
 	public:
 
-		std::shared_ptr< glt::Model > modelo = nullptr;
-		//Mesh_Component(Entity* e, const std::string&, Renderer_System&);
-
-
-
+		MeshComponent(Entity* e, const std::string&, RenderSystem&);
+		void AssignModel(const std::string&);
 
 		~MeshComponent() = default;
 	};
