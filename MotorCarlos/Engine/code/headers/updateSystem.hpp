@@ -4,6 +4,7 @@
 #include <vector>
 #include <updateComponent.hpp>
 #include <kernel.hpp>
+#include <InputSystem.hpp>
 
 namespace engine
 {
@@ -18,7 +19,7 @@ namespace engine
 
 		void Run() override;
 
-		void AddPlayerComponent(Entity* e, float speed);
+		void AddPlayerComponent(Entity* e, float speed, InputSystem& i);
 
 	};
 }

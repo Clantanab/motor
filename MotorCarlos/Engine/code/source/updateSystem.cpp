@@ -20,8 +20,10 @@ namespace engine
 		}
 	}
 
-	void UpdateSystem::AddPlayerComponent(Entity* e, float speed)
+	void UpdateSystem::AddPlayerComponent(Entity* e, float speed, InputSystem& i)
 	{
-		updates.push_back(new PlayerController(e, speed));
+		PlayerController* p = new PlayerController(e, speed);
+		updates.push_back(p);
+		i.AddReciever(p);
 	}
 }
