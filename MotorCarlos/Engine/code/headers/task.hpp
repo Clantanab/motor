@@ -10,7 +10,7 @@ namespace engine
 	public:
 		int priority = 0;
 
-		Task(int priority = 0){	this->priority = priority;}
+		 Task(int priority = 0){	this->priority = priority;}
 
 		struct Comparar
 		{

@@ -9,7 +9,7 @@
 
 namespace engine
 {
-	RenderSystem::RenderSystem(Window* window, int priorty, Kernel* kernel)
+	RenderSystem::RenderSystem(Window* window, int priorty, Kernel* kernel) : System(priorty)
 	{
 		this->window = window;
 		this->priority = priority;

@@ -5,8 +5,9 @@
 
 namespace engine
 {
-	UpdateSystem::UpdateSystem(int priorty, Kernel* kernel)
+	UpdateSystem::UpdateSystem(int priorty, Kernel* kernel) :System(priorty)
 	{
+		std::cout << "creo un update system" << std::endl;
 		this->priority = priority;
 		kernel->AddTask(this);
 	}

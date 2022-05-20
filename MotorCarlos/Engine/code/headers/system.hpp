@@ -15,7 +15,7 @@ namespace engine
 		
 
 	public:
-		System() = default;
+		System(int priority) : Task(priority) {}
 
 		virtual void Init() {};
 		virtual void Run() {};

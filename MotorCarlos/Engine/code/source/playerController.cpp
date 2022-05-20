@@ -9,7 +9,7 @@ namespace engine
 	{
 		this-> entity = e;
 		this->speed = speed;
-		dirX = 0;
+		dirX = 1;
 		dirY = 0;
 
 	}
@@ -65,7 +65,7 @@ namespace engine
 	void PlayerController::Update()
 	{
 		//To Do: Aqui deberia normalizarse el vector y multiplicarse luego por la velocidad 
-		
-		this->GetEntitiy()->GetTransform()->Translate(Vector3(1 * dirX * speed , 1 * dirY * speed, 0));
+		this->GetEntitiy()->GetTransform()->Translate(Vector3(1 * this->dirX * this->speed , 1 * this->dirY * this->speed, 0));
+
 	}
 }

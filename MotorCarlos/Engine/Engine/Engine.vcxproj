@@ -26,9 +26,11 @@
     <ClCompile Include="..\code\source\lightComponent.cpp" />
     <ClCompile Include="..\code\source\main.cpp" />
     <ClCompile Include="..\code\source\meshComponent.cpp" />
+    <ClCompile Include="..\code\source\playerController.cpp" />
     <ClCompile Include="..\code\source\renderSystem.cpp" />
     <ClCompile Include="..\code\source\scene.cpp" />
     <ClCompile Include="..\code\source\sceneManager.cpp" />
+    <ClCompile Include="..\code\source\updateSystem.cpp" />
     <ClCompile Include="..\code\source\window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +50,7 @@
     <ClInclude Include="..\code\headers\task.hpp" />
     <ClInclude Include="..\code\headers\transform.hpp" />
     <ClInclude Include="..\code\headers\updateComponent.hpp" />
+    <ClInclude Include="..\code\headers\updateSystem.hpp" />
     <ClInclude Include="..\code\headers\window.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
