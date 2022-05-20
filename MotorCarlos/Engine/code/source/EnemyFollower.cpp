@@ -1,6 +1,6 @@
 
 #include <EnemyFollower.hpp>
-
+#include <entity.hpp>
 
 namespace engine
 {
@@ -13,7 +13,18 @@ namespace engine
 
 	void EnemyFollower::Update()
 	{
+		Vector3 myPosition(this->entity->GetTransform()->GetPosition());
 
+		Vector3 dir(0,0,0);
+
+		dir = target->GetPosition() - myPosition;
+
+		dir = glm::normalize(dir);
+
+		dir.x = dir.x * speed;
+		dir.y = dir.y * speed;
+
+		this->entity->GetTransform()->Translate(dir);
 	}
 
 	void EnemyFollower::SetNewTarget(Transform* target)

@@ -21,11 +21,11 @@ int main()
 	Window window ("prueba", 800, 800, false);
 	Scene scene   ("pruebaEscena", window);
 
-	glClearColor(0.5f,0.5f,0.5f, 1.0f);
+	glClearColor(0.9f,0.9f,0.9f, 1.0f);
 	Entity e (&scene);
 	Entity e1(&scene);
 	Entity e2(&scene);
-
+	Entity e3(&scene);
 
 
 
@@ -37,8 +37,12 @@ int main()
 
 	
 	SceneManager::Instance().GetScene(0)->rendererSystem->CreateMeshComponent(&e, path);
+	SceneManager::Instance().GetScene(0)->rendererSystem->CreateMeshComponent(&e3, path);
 	SceneManager::Instance().GetScene(0)->updateSystem->AddPlayerComponent(&e, 0.030f, *SceneManager::Instance().GetScene(0)->inputSystem);
 	e.GetTransform()->Translate(Vector3(-6, 0, -10));
+	e3.GetTransform()->Translate(Vector3(6, 0, -10));
+	e3.GetTransform()->SetScale(Vector3(2, 2, 2));
+	SceneManager::Instance().GetScene(0)->updateSystem->AddEnemyComponent(&e3, 0.01f, e.GetTransform());
 	SceneManager::Instance().GetScene(0)->rendererSystem->CreateCameraComponent(&e1);
 	//SceneManager::Instance().GetScene(0)->updateSystem->AddPlayerComponent(&e1, 0.0050f, *SceneManager::Instance().GetScene(0)->inputSystem);
 	SceneManager::Instance().GetScene(0)->rendererSystem->CreateLightComponent(&e2);

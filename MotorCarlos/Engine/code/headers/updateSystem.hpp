@@ -5,6 +5,7 @@
 #include <updateComponent.hpp>
 #include <kernel.hpp>
 #include <InputSystem.hpp>
+#include <transform.hpp>
 
 namespace engine
 {
@@ -20,6 +21,7 @@ namespace engine
 		void Run() override;
 
 		void AddPlayerComponent(Entity* e, float speed, InputSystem& i);
+		void AddEnemyComponent(Entity* e, float speed, Transform* target);
 
 	};
 }

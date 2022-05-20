@@ -31,7 +31,7 @@ namespace engine
 
 	void PlayerController::SetDir(int dirXA, int dirXD, int dirYW, int DirYS)
 	{
-		std::cout << dirXD << std::endl;
+
 		this->dirXA = dirXA;
 		this->dirXD = dirXD;
 		this->dirYW = dirYW;

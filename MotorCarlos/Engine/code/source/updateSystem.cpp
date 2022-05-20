@@ -2,6 +2,7 @@
 
 #include <updateSystem.hpp>
 #include<playerController.h>
+#include <EnemyFollower.hpp>
 
 namespace engine
 {
@@ -22,7 +23,11 @@ namespace engine
 
 	void UpdateSystem::AddPlayerComponent(Entity* e, float speed, InputSystem& i)
 	{
-		PlayerController* p = new PlayerController(e, speed, i);
-		updates.push_back(p);
+
+		updates.push_back(new PlayerController(e, speed, i));
+	}
+	void UpdateSystem::AddEnemyComponent(Entity* e, float speed, Transform* target)
+	{
+		updates.push_back(new EnemyFollower(e, target, speed));
 	}
 }
