@@ -38,6 +38,8 @@
     <ClInclude Include="..\code\headers\kernel.hpp" />
     <ClInclude Include="..\code\headers\lightComponent.hpp" />
     <ClInclude Include="..\code\headers\meshComponent.hpp" />
+    <ClInclude Include="..\code\headers\playerController.h" />
+    <ClInclude Include="..\code\headers\reciveComponent.hpp" />
     <ClInclude Include="..\code\headers\renderComponent.hpp" />
     <ClInclude Include="..\code\headers\RendererSystem.hpp" />
     <ClInclude Include="..\code\headers\scene.hpp" />
@@ -45,6 +47,7 @@
     <ClInclude Include="..\code\headers\system.hpp" />
     <ClInclude Include="..\code\headers\task.hpp" />
     <ClInclude Include="..\code\headers\transform.hpp" />
+    <ClInclude Include="..\code\headers\updateComponent.hpp" />
     <ClInclude Include="..\code\headers\window.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
