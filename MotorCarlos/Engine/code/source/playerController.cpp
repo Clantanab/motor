@@ -9,7 +9,7 @@ namespace engine
 	{
 		this-> entity = e;
 		this->speed = speed;
-		dirX = 1;
+		dirX = 0;
 		dirY = 0;
 
 	}

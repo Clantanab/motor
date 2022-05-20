@@ -22,4 +22,9 @@ namespace engine
 		}
 
 	}
+
+	void InputSystem::AddReciever(RecieveComponent* reciver)
+	{
+		recievers.push_back(reciver);
+	}
 }
