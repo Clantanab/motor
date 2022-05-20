@@ -9,8 +9,10 @@ namespace engine
 	class PlayerController : public UpdateComponent, public RecieveComponent
 	{
 	private:
-		int dirX;
-		int dirY;
+		int dirXA;
+		int dirXD;
+		int dirYW;
+		int dirYS;
 		float speed;
 	public:
 

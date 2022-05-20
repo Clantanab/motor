@@ -9,8 +9,10 @@ namespace engine
 	{
 		this-> entity = e;
 		this->speed = speed;
-		dirX = 0;
-		dirY = 0;
+		dirXA = 0;
+		dirXD = 0;
+		dirYW = 0;
+		dirYS = 0;
 
 	}
 
@@ -23,16 +25,19 @@ namespace engine
 			{
 			
 			case SDLK_a:
-				dirX = -1;
+
+				dirXA = -1;
 				break;
 			case SDLK_s:
-				dirY = -1;
+
+				dirYS = -1;
 				break;
 			case SDLK_w:
-				dirY = 1;
+
+				dirYW = 1;
 				break;
 			case SDLK_d:
-				dirX = 1;
+				dirXD = 1;
 				break;
 			default:
 				break;
@@ -44,16 +49,20 @@ namespace engine
 			{
 
 			case SDLK_a:
-				dirX = 0;
+
+				dirXA = 0;
 				break;
 			case SDLK_s:
-				dirY = 0;
+
+				dirYS = 0;
 				break;
 			case SDLK_w:
-				dirY = 0;
+
+				dirYW = 0;
 				break;
 			case SDLK_d:
-				dirX = 0;
+
+				dirXD = 0;
 				break;
 			default:
 				break;
@@ -64,8 +73,33 @@ namespace engine
 
 	void PlayerController::Update()
 	{
-		//To Do: Aqui deberia normalizarse el vector y multiplicarse luego por la velocidad 
-		this->GetEntitiy()->GetTransform()->Translate(Vector3(1 * this->dirX * this->speed , 1 * this->dirY * this->speed, 0));
+		//Si no se esta moviendo saltamos este update
+		if ((dirXA + dirXD) == 0 && (dirYW + dirYS) == 0) return;
+
+		Vector3 dir(1 * (dirXA + dirXD), 1 * (dirYW + dirYS), 0);
+		dir = glm::normalize(dir);
+		dir.x = dir.x * speed;
+		dir.y = dir.y * speed;
+		this->GetEntitiy()->GetTransform()->Translate(dir);
+
+		//Limites de la pantalla 
+		//Esto se podria haber hecho con un systemCollider pero teniendo en cuenta lo que se pide en la entrega no creo que este justificado
+		if (this->GetEntitiy()->GetTransform()->GetPosition().x < -5.5f)
+		{
+			this->GetEntitiy()->GetTransform()->SetPosition(Vector3(-5.5, this->GetEntitiy()->GetTransform()->GetPosition().y, this->GetEntitiy()->GetTransform()->GetPosition().z));
+		}
+		else if (this->GetEntitiy()->GetTransform()->GetPosition().x > 5.5f)
+		{
+			this->GetEntitiy()->GetTransform()->SetPosition(Vector3(5.5f, this->GetEntitiy()->GetTransform()->GetPosition().y, this->GetEntitiy()->GetTransform()->GetPosition().z));
+		}
+		if (this->GetEntitiy()->GetTransform()->GetPosition().y < -5.5f)
+		{
+			this->GetEntitiy()->GetTransform()->SetPosition(Vector3(this->GetEntitiy()->GetTransform()->GetPosition().x,-5.5f , this->GetEntitiy()->GetTransform()->GetPosition().z));
+		}
+		else if (this->GetEntitiy()->GetTransform()->GetPosition().y > 5.5f)
+		{
+			this->GetEntitiy()->GetTransform()->SetPosition(Vector3(this->GetEntitiy()->GetTransform()->GetPosition().x, 5.5f, this->GetEntitiy()->GetTransform()->GetPosition().z));
+		}
 
 	}
 }
