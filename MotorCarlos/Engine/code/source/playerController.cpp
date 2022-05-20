@@ -5,7 +5,7 @@
 
 namespace engine
 {
-	PlayerController::PlayerController(Entity* e, float speed)
+	PlayerController::PlayerController(Entity* e, float speed, InputSystem& system)
 	{
 		this-> entity = e;
 		this->speed = speed;
@@ -14,62 +14,30 @@ namespace engine
 		dirYW = 0;
 		dirYS = 0;
 
+		system.AddReciever(new PlayerReader(entity, this));
+
 	}
 
-	void PlayerController::Recieve(SDL_Event e)
+
+	void PlayerController::SetSpeed(float speed)
 	{
-
-		if(e.type == SDL_KEYDOWN)
-		{
-			switch (e.key.keysym.sym)
-			{
-			
-			case SDLK_a:
-
-				dirXA = -1;
-				break;
-			case SDLK_s:
-
-				dirYS = -1;
-				break;
-			case SDLK_w:
-
-				dirYW = 1;
-				break;
-			case SDLK_d:
-				dirXD = 1;
-				break;
-			default:
-				break;
-			}
-		}
-		else if (e.type == SDL_KEYUP)
-		{
-			switch (e.key.keysym.sym)
-			{
-
-			case SDLK_a:
-
-				dirXA = 0;
-				break;
-			case SDLK_s:
-
-				dirYS = 0;
-				break;
-			case SDLK_w:
-
-				dirYW = 0;
-				break;
-			case SDLK_d:
-
-				dirXD = 0;
-				break;
-			default:
-				break;
-			}
-		}
-		
+		this->speed = speed;
 	}
+	
+	float PlayerController::GetSpeed()
+	{
+		return this->speed;
+	}
+
+	void PlayerController::SetDir(int dirXA, int dirXD, int dirYW, int DirYS)
+	{
+		std::cout << dirXD << std::endl;
+		this->dirXA = dirXA;
+		this->dirXD = dirXD;
+		this->dirYW = dirYW;
+		this->dirYS = DirYS;
+	}
+	
 
 	void PlayerController::Update()
 	{

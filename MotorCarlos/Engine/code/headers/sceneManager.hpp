@@ -12,7 +12,7 @@ namespace engine
 	private:
 
 		std::vector<Scene*> scenes;
-		std::vector<int> activeScenes;
+		std::vector<std::size_t> activeScenes;
 
 
 

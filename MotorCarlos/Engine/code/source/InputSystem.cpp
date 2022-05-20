@@ -26,5 +26,7 @@ namespace engine
 	void InputSystem::AddReciever(RecieveComponent* reciver)
 	{
 		recievers.push_back(reciver);
+		std::cout << "RECIEVER" << std::endl;
+		std::cout << recievers.size() << std::endl;
 	}
 }

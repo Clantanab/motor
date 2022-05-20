@@ -22,8 +22,7 @@ namespace engine
 
 	void UpdateSystem::AddPlayerComponent(Entity* e, float speed, InputSystem& i)
 	{
-		PlayerController* p = new PlayerController(e, speed);
+		PlayerController* p = new PlayerController(e, speed, i);
 		updates.push_back(p);
-		i.AddReciever(p);
 	}
 }

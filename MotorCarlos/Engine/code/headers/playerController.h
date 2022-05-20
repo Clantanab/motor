@@ -1,12 +1,13 @@
 #pragma once
 
 #include <updateComponent.hpp>
-#include <reciveComponent.hpp>
+#include <playerReader.hpp>
+#include <InputSystem.hpp>
 
 
 namespace engine
 {
-	class PlayerController : public UpdateComponent, public RecieveComponent
+	class PlayerController : public UpdateComponent
 	{
 	private:
 		int dirXA;
@@ -16,9 +17,11 @@ namespace engine
 		float speed;
 	public:
 
-		PlayerController(Entity* e, float speed);
+		PlayerController(Entity* e, float speed, InputSystem& system);
 
-		void Recieve(SDL_Event e) override;
 		 void Update() override;
+		 void SetSpeed(float speed);
+		 float GetSpeed();
+		 void SetDir(int dirXA, int dirXD, int dirYW, int DirYS);
 	};
 }

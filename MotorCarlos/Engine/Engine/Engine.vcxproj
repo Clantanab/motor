@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\code\headers\transform.cpp" />
     <ClCompile Include="..\code\source\cameraComponent.cpp" />
+    <ClCompile Include="..\code\source\EnemyFollower.cpp" />
     <ClCompile Include="..\code\source\entity.cpp" />
     <ClCompile Include="..\code\source\InputSystem.cpp" />
     <ClCompile Include="..\code\source\kernel.cpp" />
@@ -28,6 +29,7 @@
     <ClCompile Include="..\code\source\main.cpp" />
     <ClCompile Include="..\code\source\meshComponent.cpp" />
     <ClCompile Include="..\code\source\playerController.cpp" />
+    <ClCompile Include="..\code\source\playerReader.cpp" />
     <ClCompile Include="..\code\source\renderSystem.cpp" />
     <ClCompile Include="..\code\source\scene.cpp" />
     <ClCompile Include="..\code\source\sceneManager.cpp" />
@@ -37,12 +39,14 @@
   <ItemGroup>
     <ClInclude Include="..\code\headers\cameraComponent.hpp" />
     <ClInclude Include="..\code\headers\component.hpp" />
+    <ClInclude Include="..\code\headers\EnemyFollower.hpp" />
     <ClInclude Include="..\code\headers\entity.hpp" />
     <ClInclude Include="..\code\headers\InputSystem.hpp" />
     <ClInclude Include="..\code\headers\kernel.hpp" />
     <ClInclude Include="..\code\headers\lightComponent.hpp" />
     <ClInclude Include="..\code\headers\meshComponent.hpp" />
     <ClInclude Include="..\code\headers\playerController.h" />
+    <ClInclude Include="..\code\headers\playerReader.hpp" />
     <ClInclude Include="..\code\headers\reciveComponent.hpp" />
     <ClInclude Include="..\code\headers\renderComponent.hpp" />
     <ClInclude Include="..\code\headers\RendererSystem.hpp" />
