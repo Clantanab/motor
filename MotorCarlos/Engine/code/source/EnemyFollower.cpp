@@ -1,6 +1,7 @@
 
 #include <EnemyFollower.hpp>
 #include <entity.hpp>
+#include <sceneManager.hpp>
 
 namespace engine
 {
@@ -18,6 +19,7 @@ namespace engine
 		Vector3 dir(0,0,0);
 
 		dir = target->GetPosition() - myPosition;
+		float distance = glm::length(dir);
 
 		dir = glm::normalize(dir);
 
@@ -25,6 +27,13 @@ namespace engine
 		dir.y = dir.y * speed;
 
 		this->entity->GetTransform()->Translate(dir);
+
+		float error = (glm::length(entity->GetTransform()->GetScale() + target->GetScale())) / 4.0f;
+		if (distance <= error)
+		{
+			std::cout << "GAME OVER" << std::endl;
+			SceneManager::Instance().ResetSceneDemo();
+		}
 	}
 
 	void EnemyFollower::SetNewTarget(Transform* target)

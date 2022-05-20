@@ -128,4 +128,49 @@ namespace engine
 			}
 		}
 	}
+
+	void SceneManager::CreateSceneDemo()
+	{
+		Window* window = new Window("prueba", 800, 800, false);
+		Scene* scene = new Scene("deMo", *window);
+
+		glClearColor(0.9f, 0.9f, 0.9f, 1.0f);
+		std::string playerTag = "player";
+		Entity* e = new Entity(scene, playerTag);
+		Entity* e1 = new Entity(scene);
+		Entity* e2 = new Entity(scene);
+		std::string enemy1Tag = "enemy";
+		Entity* e3 = new Entity(scene, enemy1Tag);
+
+
+
+		std::string path = "../../assets/sphere.obj";
+
+
+
+		int i = 1;
+
+
+		SceneManager::Instance().GetScene("deMo")->rendererSystem->CreateMeshComponent(e, path);
+		SceneManager::Instance().GetScene("deMo")->rendererSystem->CreateMeshComponent(e3, path);
+		SceneManager::Instance().GetScene("deMo")->updateSystem->AddPlayerComponent(e, 0.030f, *SceneManager::Instance().GetScene(0)->inputSystem);
+		e->GetTransform()->Translate(Vector3(-6, 0, -10));
+		e3->GetTransform()->Translate(Vector3(6, 0, -10));
+		e3->GetTransform()->SetScale(Vector3(2, 2, 2));
+		SceneManager::Instance().GetScene("deMo")->updateSystem->AddEnemyComponent(e3, 0.01f, e->GetTransform());
+		SceneManager::Instance().GetScene("deMo")->rendererSystem->CreateCameraComponent(e1);
+		//SceneManager::Instance().GetScene(0)->updateSystem->AddPlayerComponent(&e1, 0.0050f, *SceneManager::Instance().GetScene(0)->inputSystem);
+		SceneManager::Instance().GetScene("deMo")->rendererSystem->CreateLightComponent(e2);
+		e2->GetTransform()->Translate(Vector3(10.f, 10.f, 10.f));
+		SceneManager::Instance().ActivateScene("deMo");
+	}
+
+	void SceneManager::ResetSceneDemo()
+	{
+		std::string playerTag = "player";
+		std::string enemy1Tag = "enemy";
+		SceneManager::Instance().GetScene("deMo")->GetEntity(&playerTag)->GetTransform()->SetPosition(Vector3(-6, 0, -10));
+		SceneManager::Instance().GetScene("deMo")->GetEntity(&enemy1Tag)->GetTransform()->SetPosition(Vector3(6, 0, -10));
+
+	}
 }

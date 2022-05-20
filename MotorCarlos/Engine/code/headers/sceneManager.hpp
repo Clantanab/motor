@@ -40,6 +40,10 @@ namespace engine
 		void AddScene(Scene* scene);
 		void EraseScene(std::size_t i);
 		void EraseScene(std::string id);
+
+
+		void CreateSceneDemo();
+		void ResetSceneDemo();
 	};
 
 }

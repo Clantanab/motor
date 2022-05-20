@@ -42,6 +42,7 @@ namespace engine
 		std::string GetName() {	return id;}
 
 		void AddEntity(Entity* entity);
+		
 		Entity* GetEntity(const std::string* id);
 
 	private:
