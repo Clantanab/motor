@@ -1,11 +1,11 @@
 
 #include <playerController.h>
-
-
+#include <entity.hpp>
+#include <transform.hpp>
 
 namespace engine
 {
-	PlayerController::PlayerController(Entity* e, std::size_t speed)
+	PlayerController::PlayerController(Entity* e, float speed)
 	{
 		this-> entity = e;
 		this->speed = speed;
@@ -60,5 +60,12 @@ namespace engine
 			}
 		}
 		
+	}
+
+	void PlayerController::Update()
+	{
+		//To Do: Aqui deberia normalizarse el vector y multiplicarse luego por la velocidad 
+		
+		this->GetEntitiy()->GetTransform()->Translate(Vector3(1 * dirX * speed , 1 * dirY * speed, 0));
 	}
 }

@@ -5,6 +5,7 @@
 #include <map>
 #include <entity.hpp>
 #include<RendererSystem.hpp>
+#include<updateSystem.hpp>
 #include <kernel.hpp>
 #include <sceneManager.hpp>
 
@@ -23,14 +24,14 @@ namespace engine
 		std::map<std::string, Entity* > entitys;
 
 		Kernel* kernel;
-		//std::unique_ptr <Control_System>	 controlSystem;		//< Pointer of the control system
-		//std::unique_ptr <Collision_System>	 collisionSystem;		//< Pointor of the colision system
+
+
 
 	public:
 		 Scene(const std::string& id, Window& window);
 
-		std::unique_ptr <RenderSystem>	 rendererSystem;		//< Pointer of the render system 
-
+		std::unique_ptr <RenderSystem>	 rendererSystem;		
+		std::unique_ptr <UpdateSystem> updateSystem;
 
 		void Init();
 		void Update(float time);

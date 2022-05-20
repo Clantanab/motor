@@ -37,6 +37,7 @@ int main()
 
 	
 	SceneManager::Instance().GetScene(0)->rendererSystem->CreateMeshComponent(&e, path);
+	SceneManager::Instance().GetScene(0)->updateSystem->AddPlayerComponent(&e, 0.1f);
 	e.GetTransform()->Translate(Vector3(0, 0, -5));
 	SceneManager::Instance().GetScene(0)->rendererSystem->CreateCameraComponent(&e1);
 	SceneManager::Instance().GetScene(0)->rendererSystem->CreateLightComponent(&e2);

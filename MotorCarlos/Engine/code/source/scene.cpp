@@ -20,6 +20,7 @@ namespace engine
 		this->kernel = new Kernel();
 
 		rendererSystem.reset(new RenderSystem(&window, 0, kernel));
+		updateSystem.reset(new UpdateSystem(1, kernel));
 		//collision_system.reset(new Collision_System);
 
 	}
